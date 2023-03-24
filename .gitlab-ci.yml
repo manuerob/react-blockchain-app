@@ -30,7 +30,7 @@ deploy-job:      # This job runs in the deploy stage.
     refs:
       - main
   
-  image: nikolaik/python-nodejs:python3.8-nodejs12
+  image: nikolaik/python-nodejs:python3.8-nodejs19
 
   variables:
     REGION: us-east-2

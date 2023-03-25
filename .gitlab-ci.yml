@@ -36,7 +36,7 @@ deploy-job:      # This job runs in the deploy stage.
     REGION: us-east-2
 
   before_script:
-    - cd react-app
+    - cd react-vite
     - yarn
 
   environment: production
@@ -44,5 +44,5 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - pip3 install awscli
     - CI=false yarn build
-    - aws --region $REGION s3 cp --recursive ./build/ s3://react-blockchain-app/
+    - aws --region $REGION s3 cp --recursive ./dist/ s3://react-blockchain-app/
     - cd ..

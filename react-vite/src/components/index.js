@@ -18,5 +18,5 @@ export {
   SoliditySection,
   CanvasLoader,
   Model3DCanvas, 
-  StarsCanvas
+  StarsCanvas,
 };

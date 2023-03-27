@@ -4,6 +4,10 @@
         title: "About",
         },
         {
+          id: "quotes",
+          title: "Quotes",
+        },
+        {
         id: "clarity_section",
         title: "Clarity Playground",
         },

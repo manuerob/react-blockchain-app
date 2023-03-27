@@ -1,6 +1,7 @@
 import { useConnect } from '@stacks/connect-react';
 import { stringUtf8CV } from '@stacks/transactions';
 import { useState, useEffect } from 'react';
+import { styles } from '../../styles';
 
 function ContractHello() {
   const { doContractCall } = useConnect();
@@ -39,30 +40,44 @@ function ContractHello() {
 
   return (
     <div>
-      <p>
+      
+      <div className={styles.marginY}>
+      <p className={styles.sectionSubText}>
         Contract messages
       </p>
-      <form className="userInput"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setMessageOnBlockchain();
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Enter message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button className="Contract" type="submit">Set Message</button>
-      </form>
+        <p className={styles.sectionInfo}>
+          Try sending a message on the contract
+        </p>
+        <form className="userInput"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setMessageOnBlockchain();
+          }}
+        >
+          <input
+            className={styles.inputMessage + styles.marginY}
+            type="text"
+            placeholder="Enter message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <button className={styles.btn} type="submit">Set Message</button>
+        </form>
+        
+        <p className="mt-4">
+          Current message on the chain: <span className='text-[#FB9A42]'>{message}</span>
+        </p>
+
+      </div>
       
-      <p>
-        Current message on the chain: {message}
-      </p>
-      <p>
-        Current price for setting a message: {price} microSTX
-      </p>
+      <div>
+        <p className={styles.sectionSubText}>
+          Contract price information
+        </p>
+        <p>
+          Current price for setting a message: {price} microSTX
+        </p>
+      </div>
     </div>
   );
 }

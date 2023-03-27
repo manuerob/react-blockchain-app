@@ -5,64 +5,55 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { quotes } from "../constants";
+import { pumpkin, dracula, halloween, cat, eye, evil } from "../assets";
 
-// const FeedbackCard = ({
-//   index,
-//   quote,
-//   name,
-//   designation,
-//   company,
-//   image,
-// }) => (
-//   <motion.div
-//     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-//     className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
-//   >
-//     <p className='text-white font-black text-[48px]'>"</p>
 
-//     <div className='mt-1'>
-//       <p className='text-white tracking-wider text-[18px]'>{quote}</p>
+function getRandom(arr, n) {
+  var result = new Array(n),
+      len = arr.length,
+      taken = new Array(len);
+  if (n > len)
+      throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+};
 
-//       <div className='mt-7 flex justify-between items-center gap-1'>
-//         <div className='flex-1 flex flex-col'>
-//           <p className='text-white font-medium text-[16px]'>
-//             <span className='blue-text-gradient'>@</span> {name}
-//           </p>
-//           <p className='mt-1 text-secondary text-[12px]'>
-//             {designation} of {company}
-//           </p>
-//         </div>
+const monsters = getRandom([pumpkin, dracula, halloween, cat, eye, evil],3 );
 
-//         <img
-//           src={image}
-//           alt={`feedback_by-${name}`}
-//           className='w-10 h-10 rounded-full object-cover'
-//         />
-//       </div>
-//     </div>
-//   </motion.div>
-// );
 
-// const Quotes = () => {
-//   return (
-//     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
-//       <div
-//         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
-//       >
-//         <motion.div variants={textVariant()}>
-//           <p className={styles.sectionSubText}>Random quote that gives you chilzzzzz</p>
-//           <h2 className={styles.sectionHeadText}>Quotes.</h2>
-//         </motion.div>
-//       </div>
-//       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-//         {quotes.map((quote, index) => (
-//           <FeedbackCard key={quote.name} index={index} {...quote} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+const QuoteCard = ({
+  index,
+  quote,
+  author,
+}) => {
 
+  const image = monsters[index];
+  
+  return(
+  <motion.div
+    variants={fadeIn("", "spring", index * 0.5, 0.75)}
+    className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
+  >
+    <p className='text-white font-black text-[48px]'>"</p>
+
+    <div className='mt-1'>
+      <p className='text-white tracking-wider text-[18px]'>{quote}</p>
+
+      <div className='mt-7 flex justify-between items-center gap-1'>
+        <div className='flex-1 flex flex-col'>
+          <p className='text-white font-medium text-[16px]'>
+            <span className='blue-text-gradient'>@</span> {author}
+          </p>
+          <img className='w-10 h-10 rounded-full object-cover' src={image} alt='logo'></img>
+        </div>
+      </div>
+      </div>
+  </motion.div>
+)};
 
 const Quotes = () => {
   return (
@@ -71,12 +62,14 @@ const Quotes = () => {
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Random quote that gives you chilzzzzz</p>
-          <h2 className={styles.sectionHeadText}>Quote of the day.</h2>
+          <p className={styles.sectionSubText}>Random quotes that gives you chilzzzzz</p>
+          <h2 className={styles.sectionHeadText}>Quotes of the day.</h2>
         </motion.div>
       </div>
-      <div>
-        Squary quotes incoming!
+      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
+         {getRandom(quotes, 3).map((quote, index) => (
+           <QuoteCard key={quote.number} index={index} {...quote} />
+          ))}
       </div>
     </div>
   );

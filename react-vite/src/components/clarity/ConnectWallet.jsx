@@ -1,8 +1,8 @@
 import React from "react";
 import { AppConfig, showConnect, UserSession } from "@stacks/connect";
+import { styles } from "../../styles";
 
 const appConfig = new AppConfig(["store_write", "publish_data"]);
-
 export const userSession = new UserSession({ appConfig });
 
 function authenticate() {
@@ -27,7 +27,7 @@ const ConnectWallet = () => {
   if (userSession.isUserSignedIn()) {
     return (
       <div>
-        <button className="Connect" onClick={disconnect}>
+        <button className={styles.btn} onClick={disconnect}>
           Disconnect Hiro Wallet
         </button>
         <p>mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}</p>
@@ -38,7 +38,7 @@ const ConnectWallet = () => {
   }
 
   return (
-    <button className="Connect" onClick={authenticate}>
+    <button className={styles.btn} onClick={authenticate}>
       Connect Hiro Wallet
     </button>
   );

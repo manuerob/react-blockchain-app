@@ -7,6 +7,15 @@ import { slideIn } from "../../utils/motion";
 import ConnectWallet from "./ConnectWallet";
 import ContractHello from "./ContractHello";
 
+
+const ClaritySubSection = () => (
+  <div>
+    <ConnectWallet />
+    <ContractHello />
+  </div>
+);
+const Subsection = SectionWrapper(ClaritySubSection, "clarity_subsection");
+
 const ClaritySection = () => {
 
   return (
@@ -19,8 +28,7 @@ const ClaritySection = () => {
         <h3 className={styles.sectionHeadText}>Clarity Playground</h3>
 
 
-        <ConnectWallet />
-        <ContractHello />
+        <Subsection />
 
       </motion.div>
 

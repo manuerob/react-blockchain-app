@@ -14,6 +14,8 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
+
+        {/* <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}> */}
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
             It's <span className='text-[#FB9A42]'>Spooky</span> Season
@@ -26,6 +28,9 @@ const Hero = () => {
       </div>
 
       <Model3DCanvas />
+        {/* </div> */}
+
+        
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>

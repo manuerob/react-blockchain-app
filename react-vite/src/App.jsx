@@ -14,9 +14,7 @@ const App = () =>{
         <Quotes />
         <ClaritySection />
         <SoliditySection />
-        <div className="relative z-0">
-          <StarsCanvas />
-        </div>
+        {/* <StarsCanvas />  Remove comment to see stars!*/} 
       </div>
     </BrowserRouter>
   )

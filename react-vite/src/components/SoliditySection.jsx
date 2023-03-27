@@ -16,16 +16,9 @@ const SoliditySection = () => {
       >
         <p className={styles.sectionSubText}>Built for Ethereum</p>
         <h3 className={styles.sectionHeadText}>Solidity Playground</h3>
-
         <UnityGame />
-
       </motion.div>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-      >
-      </motion.div>
     </div>
   );
 };

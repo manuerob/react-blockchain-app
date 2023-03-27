@@ -99,10 +99,23 @@
         "quote": "The most terrifying thing is to accept oneself completely.",
         "author": "Carl Jung"
       },
+
       {
         "number": 18,
         "quote": "They say when you meet the love of your life, time stops, and that's true.",
-        "author": ""},
+        "author": "Big Fish"
+      },
+      {
+        "number": 19,
+        "quote": "There is something at work in my soul, which I do not understand.",
+        "author": "Mary Shelley, Frankenstein"
+      },
+      {
+        "number": 20,
+        "quote": "There are two types of people in the world: those who like horror movies and those who are lying.",
+        "author": "Linda Williams"
+      },
+      
       ];
     
 

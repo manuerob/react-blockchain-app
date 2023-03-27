@@ -5,12 +5,35 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { quotes } from "../constants";
+import { pumpkin, dracula, halloween, cat, eye, evil } from "../assets";
+
+
+function getRandom(arr, n) {
+  var result = new Array(n),
+      len = arr.length,
+      taken = new Array(len);
+  if (n > len)
+      throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+};
+
+const monsters = getRandom([pumpkin, dracula, halloween, cat, eye, evil],3 );
+
 
 const QuoteCard = ({
   index,
   quote,
   author,
-}) => (
+}) => {
+
+  const image = monsters[index];
+  
+  return(
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
@@ -25,25 +48,12 @@ const QuoteCard = ({
           <p className='text-white font-medium text-[16px]'>
             <span className='blue-text-gradient'>@</span> {author}
           </p>
+          <img className='w-10 h-10 rounded-full object-cover' src={image} alt='logo'></img>
         </div>
       </div>
       </div>
   </motion.div>
-);
-
-function getRandom(arr, n) {
-  var result = new Array(n),
-      len = arr.length,
-      taken = new Array(len);
-  if (n > len)
-      throw new RangeError("getRandom: more elements taken than available");
-  while (n--) {
-      var x = Math.floor(Math.random() * len);
-      result[n] = arr[x in taken ? taken[x] : x];
-      taken[x] = --len in taken ? taken[len] : len;
-  }
-  return result;
-}
+)};
 
 const Quotes = () => {
   return (

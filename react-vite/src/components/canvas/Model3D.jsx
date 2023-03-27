@@ -62,7 +62,7 @@ const Model3DCanvas = () => {
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense>
+      <Suspense fallback={<CanvasLoader />}>
       <OrbitControls
           autoRotate
           enableZoom={false}

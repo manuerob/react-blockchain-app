@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import UnityGame from "./UnityGame";
 
 const SoliditySection = () => {
 
@@ -15,6 +16,8 @@ const SoliditySection = () => {
       >
         <p className={styles.sectionSubText}>Built for Ethereum</p>
         <h3 className={styles.sectionHeadText}>Solidity Projects.</h3>
+
+        <UnityGame />
 
       </motion.div>
 

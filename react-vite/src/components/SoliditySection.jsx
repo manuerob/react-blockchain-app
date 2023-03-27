@@ -15,7 +15,7 @@ const SoliditySection = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Built for Ethereum</p>
-        <h3 className={styles.sectionHeadText}>Solidity Projects.</h3>
+        <h3 className={styles.sectionHeadText}>Solidity Playground</h3>
 
         <UnityGame />
 

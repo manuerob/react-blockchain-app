@@ -62,7 +62,7 @@ const Quotes = () => {
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Random quotes that gives you chilzzzzz</p>
+          <p className={styles.sectionSubText}>Random quotes that give you chilzzzzz</p>
           <h2 className={styles.sectionHeadText}>Quotes of the day.</h2>
         </motion.div>
       </div>
@@ -75,4 +75,4 @@ const Quotes = () => {
   );
 };
 
-export default SectionWrapper(Quotes, "");
+export default SectionWrapper(Quotes, "quotes");

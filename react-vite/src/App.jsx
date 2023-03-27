@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-
 import { About, Quotes, ClaritySection, SoliditySection, Hero, Navbar, StarsCanvas } from './components';
+
 
 const App = () =>{
   return (

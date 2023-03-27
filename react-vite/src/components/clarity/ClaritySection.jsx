@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { styles } from "../../styles";
+import { SectionWrapper } from "../../hoc";
+import { slideIn } from "../../utils/motion";
+import ConnectWallet from "./ConnectWallet";
+import ContractHello from "./ContractHello";
 
 const ClaritySection = () => {
 
@@ -14,7 +16,11 @@ const ClaritySection = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Built for Bitcoin and Stacks</p>
-        <h3 className={styles.sectionHeadText}>Clarity Projects.</h3>
+        <h3 className={styles.sectionHeadText}>Clarity Playground</h3>
+
+
+        <ConnectWallet />
+        <ContractHello />
 
       </motion.div>
 

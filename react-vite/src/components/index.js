@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import About from "./About";
 import Quotes from "./Quotes";
 import CanvasLoader from "./Loader";
-import ClaritySection from "./ClaritySection";
+import ClaritySection from "./clarity/ClaritySection";
 import SoliditySection from "./SoliditySection";
 
 

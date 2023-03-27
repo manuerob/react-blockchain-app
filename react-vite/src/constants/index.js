@@ -4,12 +4,12 @@
         title: "About",
         },
         {
-        id: "solidity_section",
-        title: "Solidity Project",
+        id: "clarity_section",
+        title: "Clarity Playground",
         },
         {
-        id: "clarity_section",
-        title: "Clarity Project",
+          id: "solidity_section",
+          title: "Solidity Playground",
         },
     ];
 

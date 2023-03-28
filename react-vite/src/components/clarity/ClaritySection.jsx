@@ -6,12 +6,14 @@ import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import ConnectWallet from "./ConnectWallet";
 import ContractHello from "./ContractHello";
+import ClarityInfo from "./ClarityInfo";
 
 
 const ClaritySubSection = () => (
   <div>
     <ConnectWallet />
     <ContractHello />
+    <ClarityInfo />
   </div>
 );
 const Subsection = SectionWrapper(ClaritySubSection, "clarity_subsection");

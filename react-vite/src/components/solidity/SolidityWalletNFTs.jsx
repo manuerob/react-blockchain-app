@@ -1,6 +1,8 @@
-import { useNFTs, useContract, ThirdwebNftMedia } from "@thirdweb-dev/react";
+import { useNFTs, useContract, ThirdwebNftMedia, useAddress } from "@thirdweb-dev/react";
 
-const SolidityNFTs = () => {
+const SolidityWalletNFTs = () => {
+
+    const address = useAddress();
 
     const { contract, isLoading } = useContract("0xAac04471056308E3859E098D1FD017A7bc9dE1Ca","nft-collection" );
 
@@ -10,9 +12,11 @@ const SolidityNFTs = () => {
 
         <section>
 
+            Make sure you are connected!
+
             {(isLoading2 || isLoading)? (<p>
                 Loading...
-            </p>):(nfts?.map(nft => {
+            </p>):(nfts?.filter(nft => nft.owner == address)?.map(nft => {
                return <div key={nft.metadata.id}>
                 <ThirdwebNftMedia metadata={nft.metadata} 
                 height="100px" 
@@ -29,4 +33,4 @@ const SolidityNFTs = () => {
     );
 };
 
-export default SolidityNFTs;
+export default SolidityWalletNFTs;

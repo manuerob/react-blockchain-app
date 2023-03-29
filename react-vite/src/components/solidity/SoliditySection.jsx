@@ -5,6 +5,8 @@ import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import UnityGame from "../UnityGame";
+import SolidityWallet from "./SolidityWallet";
+import SolidityNFTs from "./SolidityNFTs";
 
 const SoliditySection = () => {
 
@@ -14,6 +16,9 @@ const SoliditySection = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
+        <SolidityWallet />
+        <p>NFTS</p>
+        <SolidityNFTs />
         <p className={styles.sectionSubText}>Built for Ethereum</p>
         <h3 className={styles.sectionHeadText}>Solidity Playground</h3>
         <UnityGame />

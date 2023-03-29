@@ -8,10 +8,23 @@ function ContractHello() {
   const [message, setMessage] = useState('');
   const [price, setPrice] = useState(0);
 
+  async function getMessageOnBlockchain() {
+    const options = {
+      contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+      contractName: 'billboard',
+      functionName: 'get-message',
+      functionArgs: [],
+    };
+
+    const response = await doContractCall(options);
+
+    console.log(response);
+  }
+
   async function setMessageOnBlockchain() {
     const options = {
-      contractAddress: 'ST3GYSEKYFE0SNZV0TNS30BM8PQ39QVN3SRG9PG4J',
-      contractName: 'helloworld',
+      contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+      contractName: 'billboard',
       functionName: 'set-message',
       functionArgs: [stringUtf8CV(message)],
     };
@@ -24,8 +37,8 @@ function ContractHello() {
   useEffect(() => {
     async function getPriceFromBlockchain() {
       const options = {
-        contractAddress: 'ST3GYSEKYFE0SNZV0TNS30BM8PQ39QVN3SRG9PG4J',
-        contractName: 'helloworld',
+        contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+        contractName: 'billboard',
         functionName: 'get-price',
         readOnlyFunctionArgs: {},
       };
@@ -48,6 +61,7 @@ function ContractHello() {
         <p className={styles.sectionInfo}>
           Try sending a message on the contract
         </p>
+                  <button onClick={getMessageOnBlockchain}>Get Message</button>
         <form className="userInput"
           onSubmit={(e) => {
             e.preventDefault();

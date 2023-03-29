@@ -7,10 +7,12 @@ import { slideIn } from "../../utils/motion";
 import ConnectWallet from "./ConnectWallet";
 import ContractHello from "./ContractHello";
 import ClarityInfo from "./ClarityInfo";
+import ClarityNFTs from "./ClarityNFTs";
 
 
 const ClaritySubSection = () => (
   <div>
+    <ClarityNFTs />
     <ConnectWallet />
     <ContractHello />
     <ClarityInfo />

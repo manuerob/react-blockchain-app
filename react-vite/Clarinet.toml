@@ -1,18 +1,22 @@
 [project]
-name = "counter"
-description = "Demonstrates how to use and interact with variables in Clarity by incrementing a 32-bit unsigned integer"
+name = 'counter'
+description = 'Demonstrates how to use and interact with variables in Clarity by incrementing a 32-bit unsigned integer'
 authors = []
 telemetry = true
 cache_dir = './.cache'
-
-[contracts.counter]
-path = "contracts/counter.clar"
+requirements = []
 
 [contracts.helloworld]
-path = "contracts/helloworld.clar"
+path = 'contracts/helloworld.clar'
+clarity_version = 1
+epoch = 2.05
 
+[contracts.pumpkin-piezzz]
+path = 'contracts/pumpkin-piezzz.clar'
+clarity_version = 1
+epoch = 2.05
 [repl.analysis]
-passes = ["check_checker"]
+passes = ['check_checker']
 
 [repl.analysis.check_checker]
 strict = false

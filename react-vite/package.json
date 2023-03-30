@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@micro-stacks/react": "^1.0.7",
     "@react-three/drei": "^9.58.4",
     "@react-three/fiber": "^8.12.0",
     "@stacks/connect": "^7.2.1",

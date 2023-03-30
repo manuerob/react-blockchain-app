@@ -8,10 +8,12 @@ import ConnectWallet from "./ConnectWallet";
 import ContractHello from "./ContractHello";
 import ClarityInfo from "./ClarityInfo";
 import ClarityNFTs from "./ClarityNFTs";
+import ClarityReadOnly from "./ClarityReadOnly";
 
 
 const ClaritySubSection = () => (
   <div>
+    <ClarityReadOnly />
     <ClarityNFTs />
     <ConnectWallet />
     <ContractHello />

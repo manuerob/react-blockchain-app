@@ -10,14 +10,13 @@ const SolidityWalletNFTs = () => {
 
     return (
 
-        <section>
-
+        <div >
             Make sure you are connected!
-
+            <section className="grid grid-rows-2 grid-flow-col">
             {(isLoading2 || isLoading)? (<p>
                 Loading...
             </p>):(nfts?.filter(nft => nft.owner == address)?.map(nft => {
-               return <div key={nft.metadata.id}>
+            return <div key={nft.metadata.id}>
                 <ThirdwebNftMedia metadata={nft.metadata} 
                 height="100px" 
                 width="100px"
@@ -28,8 +27,8 @@ const SolidityWalletNFTs = () => {
             })
             )}
 
-        </section>
-
+            </section>
+        </div>
     );
 };
 

@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
-import UnityGame from "./UnityGame";
+import { styles } from "../../styles";
+import { SectionWrapper } from "../../hoc";
+import { slideIn } from "../../utils/motion";
+import UnityGame from "../UnityGame";
+import AllSolidityNFTs from "./AllSolidityNFTs";
 
 const SoliditySection = () => {
 
@@ -16,6 +17,9 @@ const SoliditySection = () => {
       >
         <p className={styles.sectionSubText}>Built for Ethereum</p>
         <h3 className={styles.sectionHeadText}>Solidity Playground</h3>
+
+        <AllSolidityNFTs />
+
         <UnityGame />
       </motion.div>
 

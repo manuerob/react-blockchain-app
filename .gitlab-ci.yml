@@ -16,6 +16,7 @@ deploy-job:      # This job runs in the deploy stage.
 
   before_script:
     - cd react-vite
+    - npm install
     - yarn
 
   environment: production

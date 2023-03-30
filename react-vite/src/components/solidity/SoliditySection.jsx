@@ -9,6 +9,7 @@ import SolidityWallet from "./SolidityWallet";
 import SolidityNFTs from "./SolidityNFTs";
 import SolidityWalletNFTs from "./SolidityWalletNFTs";
 import ClaimNFT from "./ClaimNFT";
+import AllSolidityNFTs from "./AllSolidityNFTs";
 
 const SoliditySection = () => {
 
@@ -18,15 +19,11 @@ const SoliditySection = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <SolidityWallet />
-        <p>NFTs</p>
-        <SolidityNFTs />
-
-        <p>Your NFTs from this collection</p>
-        <SolidityWalletNFTs />
-        <ClaimNFT />
         <p className={styles.sectionSubText}>Built for Ethereum</p>
         <h3 className={styles.sectionHeadText}>Solidity Playground</h3>
+
+        <AllSolidityNFTs />
+
         <UnityGame />
       </motion.div>
 

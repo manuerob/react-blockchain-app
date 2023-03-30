@@ -16,9 +16,6 @@ deploy-job:      # This job runs in the deploy stage.
 
   before_script:
     - cd react-vite
-    - rm package-lock.json
-    - rm yarn.lock
-    - ls
     - yarn
 
   environment: production

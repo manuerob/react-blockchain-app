@@ -23,6 +23,7 @@ const styles = {
       "bg-[#943094] hover:bg-[#FB9A42] text-white font-bold py-2 px-4 rounded",
     inputMessage:
       "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#943094] focus:border-[#943094] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#943094] dark:focus:border-[#943094]",
-  };
+  
+    };
   
   export { styles };

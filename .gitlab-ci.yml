@@ -7,6 +7,7 @@ deploy-job:      # This job runs in the deploy stage.
   only:
     refs:
       - main
+      - gitlab_ci_fix
   
   image: nikolaik/python-nodejs:python3.8-nodejs19
 
